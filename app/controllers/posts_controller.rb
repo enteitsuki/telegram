@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params) # ストロングパラメータを引数に
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to @post, notice: "投稿を登録しました。"
     else
