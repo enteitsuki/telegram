@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :comments, only: [ :create, :destroy ]
   resources :users, only: :show
 
+  post   '/like/:post_id' => 'likes#like',   as: 'like'
+  delete '/like/:post_id' => 'likes#unlike', as: 'unlike'
+
   root 'posts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

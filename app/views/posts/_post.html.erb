@@ -17,6 +17,7 @@
       <%= image_tag "no_image", class: "card-img" %>
     <% end %>
   <% end %>
+  <%= render 'likes/like', post: post %>
   <div class="card-text">
     <p><%= truncate(post.caption, length: 90) %></p>
 
